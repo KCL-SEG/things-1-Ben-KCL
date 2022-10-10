@@ -15,5 +15,6 @@ class BaseModelTest(TestCase):
     def _assert_thing_is_valid(self, message="A valid thing was rejected"):
         try:
             self.thing.full_clean()
+            print("Model was accepted.")
         except ValidationError:
             self.fail(message)
